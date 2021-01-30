@@ -2,6 +2,6 @@
 <resources>
     <!-- When the version check fails, this link will be opened by tapping on the help button inside the main activity. -->
     <string name="helpUri">https://developer.sony.com/develop/open-devices/downloads/software-binaries</string>
-    <!-- When false a not matching kernel or android version will NOT cause the whole version check to fail! -->
+    <!-- When false: A not matching kernel or android version will NOT cause the whole version check to fail! -->
     <bool name="strictCheck">false</bool>
 </resources>
