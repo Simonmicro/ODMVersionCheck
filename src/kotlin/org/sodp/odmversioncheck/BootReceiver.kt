@@ -16,9 +16,18 @@ import java.lang.reflect.Array.getBoolean
 
 
 class BootReceiver : BroadcastReceiver() {
+    companion object {
+        var receiverAlreadyTriggered: Boolean = false
+    }
+
     private val TAG: String = "ODMVersionCheck"
 
     override fun onReceive(context: Context, intent: Intent) {
+        if(receiverAlreadyTriggered) {
+            Log.w(TAG, "Check can only be triggered once - ignoring request...")
+            return
+        }
+        receiverAlreadyTriggered = true
         Log.i(TAG, "Check triggered...")
 
         var isVersionCorrect = false;
