@@ -29,7 +29,7 @@ class BootReceiver : BroadcastReceiver() {
         //Ignore the following checks if the expected version is not set!
         if(propExpVers == null) {
             Log.i(TAG, "No expected odm version found - shutting down.")
-            isVersionCorrect = true
+            isVersionCorrect = true //Set this to false to fail the check on the Android Emulator, as the prop is there not set!
         } else if(propCurVers != null) {
             //Log to the console (for later use in logcat)
             Log.i(TAG, propExpVers.raw)
